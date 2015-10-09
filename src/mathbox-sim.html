@@ -99,8 +99,8 @@
       var die0 = dice[0],
           die1 = dice[1];
 
-      var roll1 = Math.floor(Math.random() * (sides + 1)),
-          roll2 = Math.floor(Math.random() * (sides + 1));
+      var roll1 = Math.floor(Math.random() * sides),
+          roll2 = Math.floor(Math.random() * sides);
 
       die0.rolls++;
       die1.rolls++;
