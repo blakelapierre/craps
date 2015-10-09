@@ -39,7 +39,7 @@
       color: 0xFF9030
     }];
 
-    var sum = [0,0,0,0,0,0,0,0,0,0,0,0];
+    var sum = [0,0,0,0,0,0,0,0,0,0,0];
 
     var id = 0;
     dice.forEach(function(die) {
@@ -73,7 +73,7 @@
 
     view.interval({
       id: 'sampler' + id,
-      length: 12,
+      length: 11, // There are only 11 possible sums
       expr: function (emit, x, i, t) {
         y = sum[i] * 0.01; // Just scaling the value so that it fits on the screen better. Is there a better way to do this?
 
@@ -109,6 +109,8 @@
       die1.total[roll2]++;
 
       sum[roll1 + roll2]++;
+
+      console.log({dice: dice, sum: sum, roll1: roll1, roll2: roll2});
     }
 
   </script>
